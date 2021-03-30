@@ -1,0 +1,25 @@
+{
+  "app": {
+    "name": "E-Commerce"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3000,
+    "url": "http://127.0.0.1:3000"
+  },
+  "mongodb": {
+    "url": "mongodb://127.0.0.1:27017/ecommerce"
+  },
+  "nodemailer": {
+    "host": "",
+    "port": 25,
+    "secure": false,
+    "auth": {
+      "user": "yash",
+      "pass": ""
+    },
+    "tls": {
+      "rejectUnauthorized": false
+    }
+  }
+}

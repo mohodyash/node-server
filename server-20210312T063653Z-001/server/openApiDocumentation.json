@@ -1,0 +1,196 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "E-commerce app",
+    "description": "Documentation for E-commerce app api"
+  },
+  "servers": [
+    {
+       "url": "http://localhost:3005/"
+    }
+  ],
+  "paths": {
+    "/user/admin/getAllUser" : {
+      "get" : {
+        "tags": ["Admin"],
+        "description": "get all admin",
+        "summary": "get all admin",
+         "responses": {
+           "200" : {
+             "description": "Ok",
+             "content": {
+               "application/json" : {
+                 "schema" : {
+                   "$ref" : "#/components/schemas/user"
+                 }
+               }
+             }
+           }
+         }
+      }
+    },
+    "/user/signup" : {
+      "post" : {
+        "tags": ["Admin"],
+        "description": "create a new user",
+        "summary": "create a new user",
+         "parameters": [
+           {
+             "in": "header",
+             "name": "Authorization",
+             "required": true,
+             "schema" : {
+               "type": "string"
+             },
+             "description": "Bearer header"    
+           }
+         ],
+        "requestBody" : {
+          "required": true,
+          "content": {
+
+            "application/json" : { 
+              "schema" : {
+                "type": "object",
+                "properties": {
+                  "fullName" : {
+                    "type": "string"
+                  },
+                  "email" : {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password" : {
+                    "type": "string"
+                  },
+                  "mobile" : {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "fullName" : "fullname",
+                "email" : "user@gmail.com",
+                "password" : "password",
+                "mobile" : "9797979797"
+         } 
+            }
+          }
+           
+        },
+         "responses": {
+           "200" : {
+             "description": "Ok",
+             "content": {
+               "application/json" : {
+                 "schema" : {
+                   "$ref" : "#/components/schemas/user"
+                 }
+               }
+             }
+           }
+         }
+      }
+    }
+    
+
+  },
+
+  "components": {
+    "schemas": {
+      "user" : {
+        "properties": {
+          "_id" : {
+            "type": "string"
+          },
+          "email" : {
+            "type":  "string",
+            "required": "true",
+            "format": "email"
+          },
+          "password" : {
+            "type": "string"
+          },
+          "mobile" : {
+            "type":  "string"
+          }, 
+          "fullName" : {
+            "type": "string",
+            "required": "true"
+          },
+          "dod" : {
+            "type": "string",
+            "format": "date"
+          },
+          "address1" : {
+            "type": "string"
+          },
+          "address2" : {
+            "type": "string"
+          },
+          "country" : {
+            "type": "string"
+          },
+          "city" : {
+            "type": "string"
+          },
+          "state"  : {
+            "type": "string"
+          },
+          "zipcode" : {
+            "type": "string"
+          },
+          "profileimg" : {
+            "type": "string"
+          },
+          "shippingNote" : {
+            "type": "string"
+          },
+          "emailVerificationKey" : {
+            "type": "string"
+          },
+          "isEmailVerified" : {
+            "type": "boolean",
+            "default" : "fasle"
+          },
+          "isMobileVerified" : {
+            "type": "boolean",
+            "default" : "false"
+          },
+          "otpCode" : {
+            "type": "string"
+          },
+         "otpCodeExpiryTime" : {
+           "type": "string",
+           "format": "date-time"
+         },
+         "emailKeyExpireTime" : {
+           "type": "string",
+           "format": "date-time"
+         },
+         "isAdmin" : {
+           "type": "boolean",
+           "default" : "false"
+         },
+         "createdAt" : {
+           "type": "string",
+           "format": "date-time"
+         },
+         "updatedAt" : {
+           "type": "string",
+           "format": "date-time"
+         }
+
+
+
+
+
+          
+          
+        }
+      }
+    }
+  }
+ 
+}

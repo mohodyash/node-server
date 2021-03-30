@@ -1,0 +1,39 @@
+{
+  "name": "nodebasicapp",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.11.1"
+  },
+  "description": "node basic application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "faisal-shaikh",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.22.0",
+    "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "escape-string-regexp": "^2.0.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^4.0.3",
+    "http": "0.0.0",
+    "http-auth": "^3.2.3",
+    "mongoose": "^5.4.19",
+    "multer": "^1.4.1",
+    "nodemailer": "^6.4.6",
+    "nodemon": "^2.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "serve-static": "^1.13.2",
+    "stripe": "^8.90.0",
+    "swagger-ui-express": "^4.1.4",
+    "uuid": "^7.0.3",
+    "validator": "^11.1.0"
+  }
+}
